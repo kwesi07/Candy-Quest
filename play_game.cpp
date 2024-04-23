@@ -9,6 +9,7 @@ using namespace std;
 
 
 void play_game(int mode, int & size) {
+    vector<string> tiles  =  {"🍰", "🍡", "🍭", "🍬", "🍫", "🍧", "🍦", "🍩"};
     int score = 0;
     int num_moves = 15; // Set number of moves for the Limited Moves Gamemode (Mode 2)
     int move_counter = 0; // To show number of moves used to reach the goal in the Target Score Gamemode (Mode 1)

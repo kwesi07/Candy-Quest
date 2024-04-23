@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "candy_quest_functions.h"
+#include <string>
 using namespace std;
 
 void make_move(int r, int c, char direction, vector<vector<string>>& board, int size) {
@@ -22,7 +23,7 @@ void make_move(int r, int c, char direction, vector<vector<string>>& board, int 
     }
     // If edge pieces are moved out of bounds
     else {
-        cout << "\nInvalid move. Please try again.\n" << std::endl;
+        cout << "\nInvalid move. Please try again.\n" << endl;
         // Implement printBoard() function here
     }
 }

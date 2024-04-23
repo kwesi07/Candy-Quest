@@ -2,7 +2,7 @@
 #include <chrono>
 #include <thread>
 
-void print_rules_and_instructions() {
+void instructions() {
     print_with_delay("\nPay attention, my Dear Explorer...");
     print_with_delay("\n🍭 RULES & INSTRUCTIONS 🍭");
     print_with_delay("1. Please choose the size of the board ranging from 5 x 5 to 10 x 10.");

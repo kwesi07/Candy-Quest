@@ -9,8 +9,8 @@ void print_candy_quest_art();
 void print_with_delay(const string &text);
 void introductions();
 void instructions();
-void createBoard(int size, vector<vector<string>>& board, const
-vector<string>& tiles); void printBoard(const vector<vector<string>>& board);
+vector<vector<string>> create_board(int size,const vector<string>& tiles); 
+void print_board(int size,const vector<vector<string>> board);
 void makeMove(int r, int c, char direction, vector<vector<string>>& board);
 bool check(const vector<vector<string>>& board);
 void matchcheck(vector<vector<string>>& board, int& score);

@@ -1,9 +1,12 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include <string>
 #include <ctime> 
 #include <cstdlib> 
 #include <limits>
 #include "candy_quest_functions.h"
+
 
 using namespace std;
 
@@ -38,10 +41,10 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
-    while (check(board, size) == 1) {
-        create_board(size, tiles);
-        check(board, size);
-    }
+   // while (check(board, size) == 1) {
+     //   create_board(size, tiles);
+      //  check(board, size);
+   // }
     print_board(size, board);
 
     while (true) {
@@ -69,10 +72,28 @@ void play_game(int mode, int & size) {
 
         cout << "------------------------\n";
         direction = toupper(direction);
-        make_move(row, col, direction, board, size);
+        //Make the move the user did by changing tiles in board
+	make_move(row, col, direction, board, size);
         num_moves -= 1;
         move_counter += 1;
+	
+	while (check(board, size)){
+		match_check( board, score, size);
+		this_thread::sleep_for(chrono::seconds(1));
+		print_board(size, board);
+		cout << "\nDropping fruits...\n";
+		//tiles drop down
+		drop(board, size);
+		this_thread::sleep_for(chrono::seconds(1));
+		print_board(size, board);
+		cout << "\nFilling fruits...\n";
+		//whitespaces filled
+		fill(board, size);
+		this_thread::sleep_for(chrono::seconds(1));
+		print_board(size, board);
+        	cout << "Score: " << score << "pts" << endl;
 
+	}
         if (check(board, size) == 0) {
             cout << "Score: " << score << " pts\n";
             // Check end condition
@@ -98,3 +119,4 @@ void play_game(int mode, int & size) {
         }
     }
 }
+  

@@ -1,9 +1,9 @@
 #ifndef CANDY_QUEST_FUNCTIONS_H
 #define CANDY_QUEST_FUNCTIONS_H
-
 #include <string>
 #include <vector>
 using namespace std;
+
 void print_candy_quest_art();
 void print_with_delay(const string& text);
 void introductions();

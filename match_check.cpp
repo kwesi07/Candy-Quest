@@ -4,7 +4,7 @@
 #include <string>
 #include <set>
 
-void matchcheck(std::vector<std::vector<std::string> >& board, int& score, int size) {
+void match_check(std::vector<std::vector<std::string>> & board, int& score, int size) {
     //sideways 5 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 4; ++col) {

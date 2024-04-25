@@ -13,7 +13,7 @@ void play_game(int mode, int & size) {
     int score = 0;
     int num_moves = 15; // Set number of moves for the Limited Moves Gamemode (Mode 2)
     int move_counter = 0; // To show number of moves used to reach the goal in the Target Score Gamemode (Mode 1)
-    vector<string> tiles = {"🍬", "🍭", "🍫", "🍩", "🍦", "🍰"};
+   // vector<string> tiles = {"🍬", "🍭", "🍫", "🍩", "🍦", "🍰"};
     if (mode == 2) {
         cout << "-------------------------------\n";
         cout << "You have " << num_moves << " moves!! Good Luck!!\n";

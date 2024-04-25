@@ -22,7 +22,7 @@ void make_move(int r, int c, char direction, vector<vector<string>>& board, int 
     }
     // If edge pieces are moved out of bounds
     else {
-        cout << "\nInvalid move. Please try again.\n" << std::endl;
-        // Implement printBoard() function here
+        cout << "\nInvalid move. Please try again.\n" << endl;
+        print_board(size, board);
     }
 }

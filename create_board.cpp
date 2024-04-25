@@ -7,7 +7,7 @@
 using namespace std;
 
 vector<vector<string>> create_board(int size, const vector<string>& tiles) {
-	
+	cout << "creating board" << endl;
     vector<vector<string>> board;
 
     // Seed the random number generator

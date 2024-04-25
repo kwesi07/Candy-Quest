@@ -5,7 +5,7 @@
 #include <set>
 using namespace std;
 
-void match_check(vector<vector<string>>& board, int& score, int size) {
+int match_check(vector<vector<string>>& board, int& score, int size) {
     //sideways 5 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 4; ++col) {
@@ -19,6 +19,7 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 25;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
@@ -35,6 +36,7 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 25;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
@@ -50,6 +52,7 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 15;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
@@ -65,6 +68,7 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 15;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
@@ -79,6 +83,7 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 10;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
@@ -93,7 +98,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 score += 10;
                 drop(board, size);
                 fill(board, size);
+                return 1;
             }
         }
     }
+    return 0;
 }

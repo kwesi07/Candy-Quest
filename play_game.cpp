@@ -37,10 +37,6 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
-    while (check(board, size) == 1) {
-        create_board(size, tiles);
-        check(board, size);
-    }
     print_board(size, board);
 
     while (true) {
@@ -74,7 +70,7 @@ void play_game(int mode, int & size) {
         num_moves -= 1;
         move_counter += 1;
 
-        if (check(board, size) == 0) {
+        if (match_check(board, score, size) == 0) {
             cout << "Score: " << score << " pts\n";
             // Check end condition
             if (mode == 1 && score >= 150) {

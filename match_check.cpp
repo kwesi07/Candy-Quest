@@ -4,17 +4,11 @@
 #include <string>
 #include <set>
 
-void matchcheck(vector<vector<string> >& board, int& score, int size) {
+void matchcheck(std::vector<std::vector<std::string> >& board, int& score, int size) {
     //sideways 5 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 4; ++col) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row][col + 1]);
-            set_board.insert(board[row][col + 2]);
-            set_board.insert(board[row][col + 3]);
-            set_board.insert(board[row][col + 4]);
-            if (board[row][col] == board[row][col + 1] == board[row][col + 2] == board[row][col + 3] == board[row][col + 4] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row][col + 1] && board[row][col + 1] == board[row][col + 2] && board[row][col + 2] == board[row][col + 3] && board[row][col + 3] == board[row][col + 4]) {
                 board[row][col] = "  ";
                 board[row][col + 1] = "  ";
                 board[row][col + 2] = "  ";
@@ -28,13 +22,7 @@ void matchcheck(vector<vector<string> >& board, int& score, int size) {
     //vertical 5 check
     for (int col = 0; col < size; ++col) {
         for (int row = 0; row < size - 4; ++row) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row + 1][col]);
-            set_board.insert(board[row + 2][col]);
-            set_board.insert(board[row + 3][col]);
-            set_board.insert(board[row + 4][col]);
-            if (board[row][col] == board[row + 1][col] == board[row + 2][col] == board[row + 3][col] == board[row + 4][col] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row + 1][col] && board[row + 1][col] == board[row + 2][col] && board[row + 2][col] == board[row + 3][col] && board[row + 3][col] == board[row + 4][col]) {
                 board[row][col] = "  ";
                 board[row + 1][col] = "  ";
                 board[row + 2][col] = "  ";
@@ -48,12 +36,7 @@ void matchcheck(vector<vector<string> >& board, int& score, int size) {
     //sideways 4 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 3; ++col) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row][col + 1]);
-            set_board.insert(board[row][col + 2]);
-            set_board.insert(board[row][col + 3]);
-            if (board[row][col] == board[row][col + 1] == board[row][col + 2] == board[row][col + 3] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row][col + 1] && board[row][col + 1] == board[row][col + 2] && board[row][col + 2] == board[row][col + 3]) {
                 board[row][col] = "  ";
                 board[row][col + 1] = "  ";
                 board[row][col + 2] = "  ";
@@ -66,12 +49,7 @@ void matchcheck(vector<vector<string> >& board, int& score, int size) {
     //vertical 4 check
     for (int col = 0; col < size; ++col) {
         for (int row = 0; row < size - 3; ++row) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row + 1][col]);
-            set_board.insert(board[row + 2][col]);
-            set_board.insert(board[row + 3][col]);
-            if (board[row][col] == board[row + 1][col] == board[row + 2][col] == board[row + 3][col] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row + 1][col] && board[row + 1][col] == board[row + 2][col] && board[row + 2][col] == board[row + 3][col]) {
                 board[row][col] = "  ";
                 board[row + 1][col] = "  ";
                 board[row + 2][col] = "  ";
@@ -84,11 +62,7 @@ void matchcheck(vector<vector<string> >& board, int& score, int size) {
     //sideways 3 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 2; ++col) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row][col + 1]);
-            set_board.insert(board[row][col + 2]);
-            if (board[row][col] == board[row][col + 1] == board[row][col + 2] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row][col + 1] && board[row][col + 1] == board[row][col + 2]) {
                 board[row][col] = "  ";
                 board[row][col + 1] = "  ";
                 board[row][col + 2] = "  ";
@@ -100,11 +74,7 @@ void matchcheck(vector<vector<string> >& board, int& score, int size) {
     //vertical 3 check
     for (int col = 0; col < size; ++col) {
         for (int row = 0; row < size - 2; ++row) {
-            std::set<std::string> set_board;
-            set_board.insert(board[row][col]);
-            set_board.insert(board[row + 1][col]);
-            set_board.insert(board[row + 2][col]);
-            if (board[row][col] == board[row + 1][col] == board[row + 2][col] && set_board != std::set<std::string>({"  "})) {
+            if (board[row][col] == board[row + 1][col] && board[row + 1][col] == board[row + 2][col]) {
                 board[row][col] = "  ";
                 board[row + 1][col] = "  ";
                 board[row + 2][col] = "  ";

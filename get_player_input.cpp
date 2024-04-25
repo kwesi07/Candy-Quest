@@ -3,7 +3,8 @@
 #include "candy_quest_functions.h"
 
 char get_player_input() {
-    std::string player_input;
+    char player_input;
+    std::cout << "Enter your choice (W/S to move pointer, Y to enter): ";
     std::cin >> player_input;
-    return toupper(player_input[0]);
+    return toupper(player_input);
 }

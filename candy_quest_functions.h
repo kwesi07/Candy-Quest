@@ -15,6 +15,7 @@ int check(const vector<vector<string> >& board, int size);
 int match_check(vector<vector<string> >& board, int& score, int size);
 void drop(vector<vector<string> >& board, int size);
 void fill(vector<vector<string> >& board, int size);
+int remove_match(vector<vector<string>>& board, int& score, int size);
 void play_game(int mode, int &size);
 void show_demo();
 void main_menu(int pointer_position_main);

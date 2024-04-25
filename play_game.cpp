@@ -37,6 +37,11 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
+    while (match_check(board, score, size)) {
+        match_check(board, score, size);
+        score = 0;
+    }
+    
     print_board(size, board);
 
     while (true) {

@@ -3,9 +3,11 @@
 #include <vector>
 #include <string>
 #include <set>
+#include <thread>
+#include <chrono>
 using namespace std;
 
-void match_check(vector<vector<string>>& board, int& score, int size) {
+int remove_match(vector<vector<string>> & board,  int size) {
     //sideways 5 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 4; ++col) {
@@ -15,8 +17,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row][col + 2] = "  ";
                 board[row][col + 3] = "  ";
                 board[row][col + 4] = "  ";
-                cout << "\n5 in a row! +25 pts!\n";
-                score += 25;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
@@ -29,8 +32,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row + 2][col] = "  ";
                 board[row + 3][col] = "  ";
                 board[row + 4][col] = "  ";
-                cout << "\n5 in a row! +25 pts!\n";
-                score += 25;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
@@ -42,9 +46,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row][col + 1] = "  ";
                 board[row][col + 2] = "  ";
                 board[row][col + 3] = "  ";
-		print_board( size, board);
-                cout << "\n4 in a row! +15 pts!\n";
-                score += 15;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
@@ -56,9 +60,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row + 1][col] = "  ";
                 board[row + 2][col] = "  ";
                 board[row + 3][col] = "  ";
-		print_board(size, board);
-                cout << "\n4 in a row! +15 pts!\n";
-                score += 15;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
@@ -69,9 +73,9 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row][col] = "  ";
                 board[row][col + 1] = "  ";
                 board[row][col + 2] = "  ";
-		print_board(size, board);
-                cout << "\n3 in a row! +10 pts!\n";
-                score += 10;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
@@ -82,10 +86,11 @@ void match_check(vector<vector<string>>& board, int& score, int size) {
                 board[row][col] = "  ";
                 board[row + 1][col] = "  ";
                 board[row + 2][col] = "  ";
-		print_board(size, board);
-                cout << "\n3 in a row! +10 pts!\n";
-                score += 10;
+                drop(board, size);
+                fill(board, size);
+                return 1;
             }
         }
     }
+    return 0;
 }

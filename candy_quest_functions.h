@@ -26,5 +26,6 @@ void start_game();
 bool confirm_quit();
 void exit_game();
 char get_player_input();
+int remove_match(vector<vector<string>> & board, int size);
 #endif
 

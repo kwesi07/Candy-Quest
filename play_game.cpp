@@ -41,10 +41,11 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
-   // while (check(board, size) == 1) {
-     //   create_board(size, tiles);
-      //  check(board, size);
-   // }
+    remove_match(board, size);
+   while (true) {//remove  initial matches
+   	if (remove_match(board, size) == 0)
+		break;
+	}	
     print_board(size, board);
 
     while (true) {
@@ -52,7 +53,17 @@ void play_game(int mode, int & size) {
         int row, col;
         char direction;
         cout << "Row, Column, Direction(WASD): ";
-        cin >> row >> col >> direction;
+	// validate if the user put in exactly 3 inputs
+	if (!(cin >> row >> col >> direction)) {
+        	cout << "Invalid input format. First two are integers and last is a character. Please provide three entries.\n";
+        	cin.clear();
+        	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+	// Check if the row and column are within the board size
+	if (row < 0 || row >= size || col < 0 || col >= size) {
+    		cout << "Invalid input. Row and column should be within the board size.\n";
+    		continue;
+	}	
         // Go back to the main menu
         if (toupper(direction) == 'Q') {
             if (confirm_quit()) {
@@ -63,7 +74,7 @@ void play_game(int mode, int & size) {
                 continue;
             }
         }
-
+	//validate that user made three entries
         // Validate direction
         if (toupper(direction) != 'W' && toupper(direction) != 'A' && toupper(direction) != 'S' && toupper(direction) != 'D') {
             cout << "Invalid direction. You can only swap UP(W), LEFT(A), RIGHT(D), or DOWN(S)\n";
@@ -80,7 +91,7 @@ void play_game(int mode, int & size) {
 	while (check(board, size)){
 		match_check( board, score, size);
 		this_thread::sleep_for(chrono::seconds(1));
-		print_board(size, board);
+	//	print_board(size, board);
 		cout << "\nDropping fruits...\n";
 		//tiles drop down
 		drop(board, size);

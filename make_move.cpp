@@ -27,4 +27,5 @@ void make_move(int r, int c, char direction, vector<vector<string>>& board, int 
         print_board(size, board);
 
     }
+	print_board( size, board);
 }

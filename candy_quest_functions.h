@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 
+void clear_screen();
 void print_candy_quest_art();
 void print_with_delay(const string& text);
 void introductions();

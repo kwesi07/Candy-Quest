@@ -27,7 +27,7 @@ vector<vector<string>> create_board(int size, const vector<string>& tiles) {
         // Add the row to the board
         board.push_back(tempRow);
     }
-	cout << "The board has been created" << endl;
+	//cout << "The board has been created" << endl;
 	return board;
 }
 

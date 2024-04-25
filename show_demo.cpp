@@ -15,14 +15,13 @@ void show_demo() {
     print_with_delay("\nPress enter to continue...");
     cin.get();
     vector<string> tiles = {"🍰", "🍡", "🍭", "🍬", "🍫", "🍧", "🍦", "🍩"};
-    vector<vector<string>> predifined_board = {
+    vector<vector<string>> predefined_board = {
         {"🍡", "🍭", "🍰", "🍧", "🍰"},
         {"🍦", "🍧", "🍡", "🍰", "🍩"},
         {"🍧", "🍭", "🍡", "🍩", "🍧"},
         {"🍩", "🍭", "🍧", "🍦", "🍬"},
         {"🍡", "🍦", "🍬", "🍬", "🍧"},
     };
-    create_demo_board(predifined_board);
     print_with_delay("\nWelcome to the Candy Kingdom, sweet traveler!");
     this_thread::sleep_for(chrono::seconds(2));
     print_with_delay("You, the Candy Explorer, are about to embark on a delightful adventure!");
@@ -38,7 +37,7 @@ void show_demo() {
         {3, 4, 'S', "We can fix this by swapping the same candy 🍬 with the candy one below!."}
     };
 
-    print_board(size, predifined_board);
+    print_board(size, predefined_board);
     for (int i = 0; i < demo_moves.size(); ++i) {
         //prints instruction
         print_with_delay(get<3>(demo_moves[i]));
@@ -51,20 +50,20 @@ void show_demo() {
         cin.get();
         print_with_delay(string("\nMaking move: ") + to_string(row) + " " + to_string(col) + " " + direction + "...");
         this_thread::sleep_for(chrono::seconds(1));
-        make_move(row, col, direction, predifined_board, size);
+        make_move(row, col, direction, predefined_board, size);
         //if there is a valid match
-        while (check(predifined_board, size)) {
-            match_check(predifined_board, score, size);
+        while (check(predefined_board, size)) {
+            match_check(predefined_board, score, size);
             this_thread::sleep_for(chrono::seconds(1));
-            print_board(size, predifined_board);
+            print_board(size, predefined_board);
             print_with_delay("\nDropping fruits...\n");
-            drop(predifined_board, size);
+            drop(predefined_board, size);
             this_thread::sleep_for(chrono::seconds(1));
-            print_board(size, predifined_board);
+            print_board(size, predefined_board);
             print_with_delay("\nFilling fruits...\n");
-            fill(predifined_board, size);
+            fill(predefined_board, size);
             this_thread::sleep_for(chrono::seconds(1));
-            print_board(size, predifined_board);
+            print_board(size, predefined_board);
         }
     }
 }

@@ -51,7 +51,7 @@ void show_demo() {
         cin.get();
         print_with_delay(string("\nMaking move: ") + to_string(row) + " " + to_string(col) + " " + direction + "...");
         this_thread::sleep_for(chrono::seconds(1));
-        makeMove(row, col, direction, predifined_board);
+        make_move(row, col, direction, predifined_board);
         //if there is a valid match
         while (check(predifined_board, size)) {
             matchcheck(predifined_board, score, size);

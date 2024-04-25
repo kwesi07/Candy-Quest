@@ -4,7 +4,6 @@
 
 
 void choose_game_mode(int & pointer_position_main, int & size) {
-    int pointer_position_main = 0;
     char player_input_game = 'N';
     while (player_input_game != 'Y') {
         main_menu(pointer_position_main);
@@ -33,8 +32,8 @@ void choose_game_mode(int & pointer_position_main, int & size) {
                         }
                     }
                 }
-            } else if (pointer_position_main == 1) {
-                show_demo();
+            // } else if (pointer_position_main == 1) {
+            //     show_demo();
             } else if (pointer_position_main == 2) {
                 exit_game();
                 break;

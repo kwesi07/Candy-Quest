@@ -69,6 +69,8 @@ void play_game(int mode, int & size) {
         cout << "------------------------\n";
         direction = toupper(direction);
         make_move(row, col, direction, board, size);
+        match_check(board, score, size);
+        print_board(size, board);
         num_moves -= 1;
         move_counter += 1;
 

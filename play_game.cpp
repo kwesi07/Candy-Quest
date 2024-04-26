@@ -108,15 +108,21 @@ void play_game(int mode, int & size) {
         if (check(board, size) == 0) {
             cout << "Score: " << score << " pts\n";
             // Check end condition
-            if (mode == 1 && score >= 150) {
+            if (mode == 1 && score >= 20) {
                 cout << "You used " << move_counter << " moves to reach the goal!\n";
                 cout << "YOU WON!!!\n";
+                cout << "Press Enter to continue..." << endl;
+                highscore(move_counter, mode);
+                cin.ignore();
                 score = 0;
                 break;
             }
             else if (mode == 2 && num_moves == 0) {
                 cout << "Your final score was " << score << "!!!\n";
                 cout << "Thanks for playing! See you next time!!\n";
+                highscore(score, mode);
+                cout << "Press Enter to continue..." << endl;
+                cin.ignore();
                 score = 0;
                 break;
             }

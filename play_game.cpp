@@ -115,13 +115,18 @@ void play_game(int mode, int & size) {
             if (mode == 1 && score >= 150) {
                 cout << "You used " << move_counter << " moves to reach the goal!\n";
                 cout << "YOU WON!!!\n";
+                cout << "Press Enter to continue..." << endl;
+                highscore(move_counter, mode);
+                cin.ignore();
                 score = 0;
                 break;
             }
             else if (mode == 2 && num_moves == 0) {
                 cout << "Your final score was " << score << "!!!\n";
                 cout << "Thanks for playing! See you next time!!\n";
-                highscore(score);
+                highscore(score, mode);
+                cout << "Press Enter to continue..." << endl;
+                cin.ignore();
                 score = 0;
                 break;
                 
@@ -132,7 +137,7 @@ void play_game(int mode, int & size) {
             cout << "You have made " << move_counter << " moves.\n";
         }
         else if (mode == 2) {
-            cout << "You have " << num_moves << " left.\n";
+            cout << "You have " << num_moves << " moves left.\n";
         }
     }
 }

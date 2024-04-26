@@ -5,6 +5,7 @@ using namespace std;
 
 void main_menu(int pointer_position_main) {
     string pointer = "<--";
+    clear_screen();
     vector<string> options = {"🍡 Play Game", "🍡 Show Demo", "🍡 Quit"};
     cout << "\n🍰🍡🍭🍬🍫🍧🍦🍰🍡🍭🍬🍫🍧🍦🍩🍰🍡🍭🍬🍫🍧🍦🍩" << endl;
     cout << "---- CANDY QUEST ----" << endl;

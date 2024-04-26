@@ -13,6 +13,7 @@ void choose_game_mode(int & pointer_position_main, int & size) {
             if (pointer_position_main == 0) {
                 int pointer_position_game = 0;
                 while (true) {
+                    clear_screen();
                     mode_menu(pointer_position_game);
                     char player_input_mode = get_player_input(); // Changed variable name to player_input_mode
                     move_pointer(pointer_position_game, player_input_mode); // Changed variable name to player_input_mode

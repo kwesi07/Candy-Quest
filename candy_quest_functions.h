@@ -27,5 +27,9 @@ bool confirm_quit();
 void exit_game();
 char get_player_input();
 int remove_match(vector<vector<string>> & board, int size);
+void write_highscores(const vector<pair<string, int>>& highScores, const string& filename);
+vector<pair<string, int>> load_highscores(const string& filename);
+void check_and_add_highscore(int playerScore, vector<pair<string, int>>& highScores, int mode);
+void highscore(int playerScore, int mode);
 #endif
 

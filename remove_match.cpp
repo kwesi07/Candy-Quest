@@ -3,8 +3,6 @@
 #include <vector>
 #include <string>
 #include <set>
-#include <thread>
-#include <chrono>
 using namespace std;
 
 int remove_match(vector<vector<string>>& board, int& score, int size) {

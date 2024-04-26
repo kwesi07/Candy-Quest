@@ -1,18 +1,22 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include <string>
 #include <ctime> 
 #include <cstdlib> 
 #include <limits>
 #include "candy_quest_functions.h"
 
+
 using namespace std;
 
 
 void play_game(int mode, int & size) {
+    vector<string> tiles  =  {"🍰", "🍡", "🍭", "🍬", "🍫", "🍧", "🍦", "🍩"};
     int score = 0;
     int num_moves = 15; // Set number of moves for the Limited Moves Gamemode (Mode 2)
     int move_counter = 0; // To show number of moves used to reach the goal in the Target Score Gamemode (Mode 1)
-    vector<string> tiles = {"🍬", "🍭", "🍫", "🍩", "🍦", "🍰"};
+   // vector<string> tiles = {"🍬", "🍭", "🍫", "🍩", "🍦", "🍰"};
     if (mode == 2) {
         cout << "-------------------------------\n";
         cout << "You have " << num_moves << " moves!! Good Luck!!\n";
@@ -37,10 +41,18 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
+<<<<<<< HEAD
     while (match_check(board, score, size)) {
         remove_match(board, score, size);
     }
     
+=======
+    remove_match(board, size);
+   while (true) {//remove  initial matches
+   	if (remove_match(board, size) == 0)
+		break;
+	}	
+>>>>>>> kwesi
     print_board(size, board);
 
     while (true) {
@@ -48,7 +60,17 @@ void play_game(int mode, int & size) {
         int row, col;
         char direction;
         cout << "Row, Column, Direction(WASD): ";
-        cin >> row >> col >> direction;
+	// validate if the user put in exactly 3 inputs
+	if (!(cin >> row >> col >> direction)) {
+        	cout << "Invalid input format. First two are integers and last is a character. Please provide three entries.\n";
+        	cin.clear();
+        	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+	// Check if the row and column are within the board size
+	if (row < 0 || row >= size || col < 0 || col >= size) {
+    		cout << "Invalid input. Row and column should be within the board size.\n";
+    		continue;
+	}	
         // Go back to the main menu
         if (toupper(direction) == 'Q') {
             if (confirm_quit()) {
@@ -59,7 +81,7 @@ void play_game(int mode, int & size) {
                 continue;
             }
         }
-
+	//validate that user made three entries
         // Validate direction
         if (toupper(direction) != 'W' && toupper(direction) != 'A' && toupper(direction) != 'S' && toupper(direction) != 'D') {
             cout << "Invalid direction. You can only swap UP(W), LEFT(A), RIGHT(D), or DOWN(S)\n";
@@ -68,6 +90,7 @@ void play_game(int mode, int & size) {
 
         cout << "------------------------\n";
         direction = toupper(direction);
+<<<<<<< HEAD
         make_move(row, col, direction, board, size);
         match_check(board, score, size);
         print_board(size, board);
@@ -75,6 +98,31 @@ void play_game(int mode, int & size) {
         move_counter += 1;
         
         if (match_check(board, score, size) == 0) {
+=======
+        //Make the move the user did by changing tiles in board
+	make_move(row, col, direction, board, size);
+        num_moves -= 1;
+        move_counter += 1;
+	
+	while (check(board, size)){
+		match_check( board, score, size);
+		this_thread::sleep_for(chrono::seconds(1));
+	//	print_board(size, board);
+		cout << "\nDropping fruits...\n";
+		//tiles drop down
+		drop(board, size);
+		this_thread::sleep_for(chrono::seconds(1));
+		print_board(size, board);
+		cout << "\nFilling fruits...\n";
+		//whitespaces filled
+		fill(board, size);
+		this_thread::sleep_for(chrono::seconds(1));
+		print_board(size, board);
+        	cout << "Score: " << score << "pts" << endl;
+
+	}
+        if (check(board, size) == 0) {
+>>>>>>> kwesi
             cout << "Score: " << score << " pts\n";
             // Check end condition
             if (mode == 1 && score >= 150) {
@@ -99,3 +147,4 @@ void play_game(int mode, int & size) {
         }
     }
 }
+  

@@ -1,9 +1,10 @@
 #ifndef CANDY_QUEST_FUNCTIONS_H
 #define CANDY_QUEST_FUNCTIONS_H
-
 #include <string>
 #include <vector>
 using namespace std;
+
+void clear_screen();
 void print_candy_quest_art();
 void print_with_delay(const string& text);
 void introductions();
@@ -11,8 +12,8 @@ void instructions();
 vector<vector<string>> create_board(int size,const vector<string>& tiles);
 void print_board(int size,const vector<vector<string>> board);
 void make_move(int r, int c, char direction, vector<vector<string>>& board, int size);
-int check(const vector<vector<string> >& board, int size);
-int match_check(vector<vector<string> >& board, int& score, int size);
+int check(const vector<vector<string>>& board, int size);
+void match_check(vector<vector<string>> & board, int& score, int size);
 void drop(vector<vector<string> >& board, int size);
 void fill(vector<vector<string> >& board, int size);
 int remove_match(vector<vector<string>>& board, int& score, int size);
@@ -26,5 +27,6 @@ void start_game();
 bool confirm_quit();
 void exit_game();
 char get_player_input();
+int remove_match(vector<vector<string>> & board, int size);
 #endif
 

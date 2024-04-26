@@ -22,7 +22,7 @@ void play_game(int mode, int & size) {
         cout << "You have " << num_moves << " moves!! Good Luck!!\n";
         cout << "-------------------------------\n";
     }
-
+    
     while (true) {
         cout << "Input a board size (4 < n < 11): ";
         cin >> size;
@@ -41,18 +41,12 @@ void play_game(int mode, int & size) {
 
     // Call createBoard function to initially set up the board
     vector<vector<string>> board = create_board(size, tiles);
-<<<<<<< HEAD
-    while (match_check(board, score, size)) {
-        remove_match(board, score, size);
-    }
     
-=======
     remove_match(board, size);
    while (true) {//remove  initial matches
    	if (remove_match(board, size) == 0)
 		break;
 	}	
->>>>>>> kwesi
     print_board(size, board);
 
     while (true) {
@@ -90,15 +84,9 @@ void play_game(int mode, int & size) {
 
         cout << "------------------------\n";
         direction = toupper(direction);
-<<<<<<< HEAD
         make_move(row, col, direction, board, size);
         match_check(board, score, size);
         print_board(size, board);
-        num_moves -= 1;
-        move_counter += 1;
-        
-        if (match_check(board, score, size) == 0) {
-=======
         //Make the move the user did by changing tiles in board
 	make_move(row, col, direction, board, size);
         num_moves -= 1;
@@ -122,7 +110,6 @@ void play_game(int mode, int & size) {
 
 	}
         if (check(board, size) == 0) {
->>>>>>> kwesi
             cout << "Score: " << score << " pts\n";
             // Check end condition
             if (mode == 1 && score >= 150) {
@@ -134,8 +121,10 @@ void play_game(int mode, int & size) {
             else if (mode == 2 && num_moves == 0) {
                 cout << "Your final score was " << score << "!!!\n";
                 cout << "Thanks for playing! See you next time!!\n";
+                highscore(score);
                 score = 0;
                 break;
+                
             }
         }
 
@@ -147,4 +136,4 @@ void play_game(int mode, int & size) {
         }
     }
 }
-  
+

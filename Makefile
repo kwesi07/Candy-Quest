@@ -2,7 +2,7 @@
 CXX = g++
 CXXFLAGS = -pedantic-errors -std=c++11
 
-OBJS = introductions.o remove_match.o clear_screen.o match_check.o drop.o fill.o make_move.o show_demo.o get_player_input.o play_game.o choose_game_mode.o instructions.o check.o confirm_quit.o main_menu.o exit_game.o mode_menu.o move_pointer.o print_with_delay.o print_candy_quest_art.o create_board.o print_board.o main.o
+OBJS = introductions.o check_and_add_highscores.o highscore.o remove_match.o load_highscores.o write_highscores.o clear_screen.o match_check.o drop.o fill.o make_move.o show_demo.o get_player_input.o play_game.o choose_game_mode.o instructions.o check.o confirm_quit.o main_menu.o exit_game.o mode_menu.o move_pointer.o print_with_delay.o print_candy_quest_art.o create_board.o print_board.o main.o
 
 
 #pattern rule for .o files

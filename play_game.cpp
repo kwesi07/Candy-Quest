@@ -108,7 +108,7 @@ void play_game(int mode, int & size) {
         if (check(board, size) == 0) {
             cout << "Score: " << score << " pts\n";
             // Check end condition
-            if (mode == 1 && score >= 20) {
+            if (mode == 1 && score >= 150) {
                 cout << "You used " << move_counter << " moves to reach the goal!\n";
                 cout << "YOU WON!!!\n";
                 cout << "Press Enter to continue..." << endl;

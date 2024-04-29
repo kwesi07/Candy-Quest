@@ -4,7 +4,7 @@
 
 
 
-void highscore_menu(it pointer_position_main, bool clearscreen = true) {
+void highscore_menu(int pointer_position_main, bool clearscreen = true) {
     string pointer = "<--";
     if (clearscreen) {
         clear_screen();

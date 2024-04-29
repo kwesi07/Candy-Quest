@@ -29,7 +29,12 @@ void choose_game_mode(int & pointer_position_main, int & size) {
                             std::cout << "FREE TO PLAY MODE: Play as much as you want!" << std::endl;
                             play_game(3, size);
                             break;
+                        } else if (pointer_position_game == 3) {
+                            std::cout << "View Highscores" << std::endl;
+                            view_highscores();
+                            break;
                         }
+
                     }
                 }
             } else if (pointer_position_main == 1) {

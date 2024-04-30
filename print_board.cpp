@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void print_board(int size ,const vector<vector<string>> board){
+void print_board(int size ,const vector<vector<string>> board){ //prints the board
   //  clear_screen();	
     cout << string(size * 3 + 1, '-') << endl;
     for (size_t i = 0; i < board.size(); ++i) {

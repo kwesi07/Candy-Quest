@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void print_candy_quest_art() {
+void print_candy_quest_art() { //function to print the game art
     string art = R"(
     
        ▄████▄   ▄▄▄      ███▄    █ ▓█████▄▓██   ██▓     █████   █    ██ ▓█████   ██████ ▄▄▄█████▓

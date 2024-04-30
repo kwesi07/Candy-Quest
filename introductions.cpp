@@ -4,7 +4,7 @@
 #include <thread>
 using namespace std;
 
-void introductions() {
+void introductions() { //function to introduce the game
   cout << "**INCREASE YOUR TERMINAL FOR THE ULTIMATE EXPERIENCE**" << endl;
   cout << "Press Enter to continue..." << endl;
   cin.ignore();

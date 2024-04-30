@@ -8,7 +8,7 @@ using namespace std;
 
 vector<pair<string, int>> load_highscores(const string& filename) {
     vector<pair<string, int>> highScores;
-    ifstream file(filename);
+    ifstream file(filename); // open highscore files
 
     if (file.is_open()) {
         string line;
@@ -17,7 +17,7 @@ vector<pair<string, int>> load_highscores(const string& filename) {
             string name;
             int score;
             if (!(iss >> name >> score)) { break; } // error
-            highScores.push_back({name, score});
+            highScores.push_back({name, score}); // add to highScores
         }
         file.close();
     } else {
@@ -25,8 +25,8 @@ vector<pair<string, int>> load_highscores(const string& filename) {
     }
 
     sort(highScores.begin(), highScores.end(), [](const pair<string, int>& a, const pair<string, int>& b) {
-        return a.second > b.second;
+        return a.second > b.second; // sort in descending order
     });
 
-    return highScores;
+    return highScores; // return the sorted highScores
 }

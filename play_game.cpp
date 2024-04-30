@@ -105,10 +105,10 @@ void play_game(int mode, int & size) {
         	cout << "Score: " << score << "pts" << endl;
 
 	}
-        if (check(board, size) == 0) {
+        if (check(board, size) == 0) { // If there are no more matches
             cout << "Score: " << score << " pts\n";
             // Check end condition
-            if (mode == 1 && score >= 150) {
+            if (mode == 1 && score >= 150) { // Target Score Gamemode to check if the player has reached the score goal
                 cout << "You used " << move_counter << " moves to reach the goal!\n";
                 cout << "YOU WON!!!\n";
                 cout << "Press Enter to continue..." << endl;
@@ -117,10 +117,10 @@ void play_game(int mode, int & size) {
                 score = 0;
                 break;
             }
-            else if (mode == 2 && num_moves == 0) {
+            else if (mode == 2 && num_moves == 0) { // Limited Moves Gamemode to check if the player has used all moves
                 cout << "Your final score was " << score << "!!!\n";
                 cout << "Thanks for playing! See you next time!!\n";
-                highscore(score, mode);
+                highscore(score, mode); // Check if the player has a high score and if so call functon to add it and display it
                 cout << "Press Enter to continue..." << endl;
                 cin.ignore();
                 score = 0;
@@ -129,10 +129,10 @@ void play_game(int mode, int & size) {
         }
 
         if (mode == 1) {
-            cout << "You have made " << move_counter << " moves.\n";
+            cout << "You have made " << move_counter << " moves.\n"; // Display number of moves made in Target Score Gamemode
         }
         else if (mode == 2) {
-            cout << "You have " << num_moves << " left.\n";
+            cout << "You have " << num_moves << " left.\n"; // Display number of moves left in Limited Moves Gamemode
         }
     }
 }

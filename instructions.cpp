@@ -3,7 +3,7 @@
 #include <thread>
 #include "candy_quest_functions.h"
 
-void instructions() {
+void instructions() { //to display the rules and instructions of the game
     print_with_delay("\nPay attention, my Dear Explorer...");
     print_with_delay("\n RULES & INSTRUCTIONS ");
     print_with_delay("1. Please choose the size of the board ranging from 5 x 5 to 10 x 10.");

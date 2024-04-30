@@ -7,7 +7,7 @@
 #include <chrono>
 using namespace std;
 
-int remove_match(vector<vector<string>> & board,  int size) {
+int remove_match(vector<vector<string>> & board,  int size) { //function to remove matches for board generation
     //sideways 5 check
     for (int row = 0; row < size; ++row) {
         for (int col = 0; col < size - 4; ++col) {

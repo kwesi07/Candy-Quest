@@ -5,7 +5,7 @@
 using namespace std;
 
 void highscore(int playerScore, int mode) {
-    if (mode == 1) {
+    if (mode == 1) { // mode 1 is for target mode highscore
         vector<pair<string, int>> highScores = load_highscores("move_highscore.txt");
         check_and_add_highscore(playerScore, highScores, mode);
         for (size_t i = 0; i < highScores.size(); ++i) {
@@ -13,7 +13,7 @@ void highscore(int playerScore, int mode) {
         }
         write_highscores(highScores, "move_highscore.txt");
     }
-    else if (mode == 2) {
+    else if (mode == 2) { // mode 2 is for limited moves highscore
         vector<pair<string, int>> highScores = load_highscores("ltd_moves_highscore.txt");
         check_and_add_highscore(playerScore, highScores, mode);
         for (size_t i = 0; i < highScores.size(); ++i) {
@@ -23,7 +23,7 @@ void highscore(int playerScore, int mode) {
     }
     else {
         cout << "Invalid mode" << endl;
-        return;
+        return; // return if mode is not 1 or 2
     }
     
 }

@@ -6,7 +6,7 @@
 #include <thread>
 using namespace std;
 
-void show_demo() {
+void show_demo() { //function to show the demo
     int score, size;
     score = 0;
     size = 5;

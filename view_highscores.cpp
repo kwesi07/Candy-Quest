@@ -45,8 +45,8 @@ void view_highscores() {
                 cin.get();
 
             } else if (pointer_position_main == 2) {
-                break;
-            }
+		break;
+           }
             cin.get();
         }
     }

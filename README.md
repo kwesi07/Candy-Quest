@@ -1,5 +1,5 @@
 Team Members
-- Zheng Runhao ( Contributor tag - 30049038; UID - )
+- Zheng Runhao ( Contributor tag - 30049038; UID - 3036271540)
 - Kwesi Owusu-Ofori ( Contributor tag - kwesi07, Owusu-ofori Kwesi, Kwesi Owusu-Ofori; UID - 3036259267)
 
 GAME
@@ -22,9 +22,10 @@ Features of game:
 - In the "create_board" function, a vector (STL container) was used to store the status of the game board during the playing of the game. It was passed by reference to the required functions to achieve this.
 - We have implemented a high-score sheet which stores the scores of the players' names with their attained score from highest to lowest. We have implemented this using File input/output to store highscores in a txt file.
 - The different functions used in the code are all stored in different files. And have used separate compilation and linking of their objects files to one executable(main).
-- 
+  
 
 Compilation and Execution Process
-- In the terminal type the command 'make' to generate the object files for the functions and link them together to for the executable 'main'.
-- Run 'main' by typing './main' in the terminal.
+- In the terminal type the command 'make' and press enternto generate the object files for the functions and link them together to for the executable 'main'.
+- Run 'main' by typing './main' in the terminal and pressing enter.
+- If there is a problem running 'make', run 'make clean' first then run 'make' again(by run; type the command and press enter)
 - Follow instructions in the game for gameplay and rules.

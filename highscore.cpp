@@ -19,16 +19,7 @@ void highscore(int playerScore, int mode) {
         for (size_t i = 0; i < highScores.size(); ++i) {
             cout << "Rank " << i + 1 << ": " << highScores[i].first << " with score " << highScores[i].second << endl;
         }
-        write_highscores(highScores, "ltd_time_highscore.txt");
-    }
-    else if (mode == 3) {
-        vector<pair<string, int>> highScores = load_highscores("non_ltd_moves_highscore.txt");
-        check_and_add_highscore(playerScore, highScores, mode);
-        for (size_t i = 0; i < highScores.size(); ++i) {
-            cout << "Rank " << i + 1 << ": " << highScores[i].first << " with score " << highScores[i].second << endl;
-        }
-
-        write_highscores(highScores, "non_ltd_time_highscore.txt");
+        write_highscores(highScores, "ltd_moves_highscore.txt");
     }
     else {
         cout << "Invalid mode" << endl;

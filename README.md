@@ -6,7 +6,7 @@ GAME
 Name: Candy Quest
 Description:
 This is a text-based game coded in c++ which took inspiration from Candy Crush. The game comprises of three game modes; Target mode, Limited Moves mode, and Free to Play mode.
-- In Target mode, the goal is to a certain number of points with an unlimited number of moves.
+- In Target mode, the goal is to a certain number of points with the least number of moves.
 - In Limited Moves mode, the goal is to get the most number of points you can within a limited number of moves.
 - In Free to Play mode, there is no restriction you can make as many swaps and matches as you want.
   
